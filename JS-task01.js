@@ -1,11 +1,9 @@
 function cellbgc(){
-             return '#'+Math.floor(Math.random()*0xffffff).toString(16);
+             var r=Math.floor(Math.random()*256);
+             var g=Math.floor(Math.random()*256);
+             var b=Math.floor(Math.random()*256);
+             return "rgb("+r+','+g+','+b+")";             
          }
-//随机颜色：https://www.cnblogs.com/li-han/p/5964463.html
-
-//随机排序会有空位：https://www.cnblogs.com/gaoxuerong123/p/7944044.html
-
-//随机排序：https://www.phpsong.com/3125.html
 
 function ranarr()
 {
@@ -36,7 +34,10 @@ var t;
 
 function strchg()
 {
-    t=setInterval('chg()',1000);
+    if(t===undefined)
+    {
+        t=setInterval('chg()',1000);
+    }
     document.getElementById("btnstr").style.backgroundColor="orange";
     document.getElementById("btnstr").style.color="white";
     document.getElementById("btnend").style.backgroundColor="white";
@@ -50,7 +51,7 @@ function endchg()
     for(n=0;n<9;n++)
     {
         x[n].style.backgroundColor="orange";
-    }
+    }        
     document.getElementById("btnend").style.backgroundColor="orange";
     document.getElementById("btnend").style.color="white";
     document.getElementById("btnstr").style.backgroundColor="white";
