@@ -30,11 +30,11 @@ function chg()
     x[c].style.backgroundColor=cellbgc();
 }
 
-var t;
+var t=0;
 
 function strchg()
 {
-    if(t===undefined)
+    if(t===0)
     {
         t=setInterval('chg()',1000);
     }
@@ -46,7 +46,11 @@ function strchg()
 
 function endchg()
 {
-    clearInterval(t);
+    if(t!==0)
+    {
+        clearInterval(t);
+    }
+    t=0;
     var x=document.getElementsByClassName("nine"),n;
     for(n=0;n<9;n++)
     {
